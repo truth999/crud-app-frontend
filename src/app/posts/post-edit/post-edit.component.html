@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Edit Post</h5>
+    <form *ngIf="postForm"
+          [formGroup]="postForm"
+          (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text"
+               class="form-control"
+               id="title"
+               formControlName="title">
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea class="form-control"
+                  id="content"
+                  formControlName="content"></textarea>
+      </div>
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-outline-secondary btn-sm"
+                (click)="onBack()">Back</button>
+        <button type="submit"
+                class="btn btn-success btn-sm"
+                [disabled]="!postForm.valid">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

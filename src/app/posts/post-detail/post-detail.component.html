@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Post</h5>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text"
+             class="form-control-plaintext"
+             id="title"
+             [value]="post?.title"
+             readonly>
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Content</label>
+      <textarea class="form-control-plaintext"
+                id="content"
+                readonly>{{ post?.content }}</textarea>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button type="button"
+              class="btn btn-outline-secondary btn-sm me-1"
+              (click)="onBack()">Back</button>
+      <div>
+        <a [routerLink]="['edit']" class="btn btn-success btn-sm me-1">Edit</a>
+        <button type="button"
+                class="btn btn-danger btn-sm"
+                (click)="onDelete(post._id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
